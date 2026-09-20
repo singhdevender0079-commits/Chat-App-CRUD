@@ -1,0 +1,17 @@
+:root { --ink: #1f2a37; --muted: #728091; --line: #e1e7eb; --paper: #fff; --canvas: #f4f7f9; --teal: #168c83; --teal-dark: #0f6f68; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--canvas); font-family: Georgia, "Times New Roman", serif; }
+.form-shell { width: min(100% - 32px, 570px); margin: 0 auto; padding: 48px 0 72px; }
+.back-link { display: inline-block; margin-bottom: 24px; color: var(--teal-dark); font: 700 13px Arial, sans-serif; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+.form-card { padding: clamp(24px, 6vw, 46px); background: var(--paper); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 14px 35px rgba(31, 42, 55, .06); }
+.eyebrow { margin: 0 0 9px; color: var(--teal); font: 700 11px/1.2 Arial, sans-serif; letter-spacing: 1.6px; text-transform: uppercase; }
+h1 { margin: 0 0 11px; font-size: clamp(32px, 6vw, 45px); line-height: 1; letter-spacing: -1px; }
+.intro { margin: 0 0 30px; color: var(--muted); font: 14px/1.6 Arial, sans-serif; }
+.chat-form { display: grid; gap: 9px; }
+label { margin-top: 9px; color: #44515e; font: 700 12px Arial, sans-serif; }
+textarea { width: 100%; min-height: 170px; resize: vertical; border: 1px solid var(--line); border-radius: 8px; outline: 0; color: var(--ink); background: #fbfcfc; padding: 13px 14px; font: inherit; line-height: 1.5; transition: border .18s ease, box-shadow .18s ease; }
+textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(22, 140, 131, .12); }
+.button { margin-top: 14px; border: 0; border-radius: 9px; cursor: pointer; color: #fff; background: var(--teal); padding: 13px 17px; font: 700 13px Arial, sans-serif; }
+.button:hover { background: var(--teal-dark); }
+.button span { margin-left: 7px; font-size: 17px; }

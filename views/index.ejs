@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chats | WhatsApp Clone</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Your conversations</p>
+                <h1>Chats</h1>
+            </div>
+            <form method="get" action="/chats/new">
+                <button class="button button-primary" type="submit">+ New chat</button>
+            </form>
+        </header>
+
+        <section class="chat-list" aria-label="Chat messages">
+            <% if (chats.length === 0) { %>
+                <div class="empty-state">
+                    <span class="empty-icon">&#9993;</span>
+                    <h2>No chats yet</h2>
+                    <p>Start a conversation and it will appear here.</p>
+                </div>
+            <% } %>
+            <% for(let chat of chats){ %>
+                <article class="chat-card">
+                    <div class="chat-meta">
+                        <div class="avatar"><%= (chat.from || "?").charAt(0).toUpperCase() %></div>
+                        <div>
+                            <p class="sender"><%= chat.from %></p>
+                            <p class="recipient">To <%= chat.To %></p>
+                        </div>
+                    </div>
+                    <p class="message"><%= chat.message%></p>
+                    <div class="card-actions">
+                        <form action="/chats/<%=chat._id %>/edit" method="get">
+                            <button class="button button-quiet" type="submit">Edit</button>
+                        </form>
+                        <form method="post" action="/chats/<%=chat._id %>?_method=DELETE">
+                            <button class="button button-danger" type="submit">Delete</button>
+                        </form>
+                    </div>
+                </article>
+            <% } %>
+        </section>
+    </main>
+</body>
+</html>
